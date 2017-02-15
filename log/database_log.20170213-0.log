@@ -1,0 +1,8 @@
+[ERROR] 2017-02-13 17:28:33 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-13 17:28:33 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-13 17:28:33 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-13 17:28:33 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-13 17:28:33 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 17:28:33 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-13 17:28:33 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 17:28:33 [redisserver] [./log/tprint.lua:16] get db success

@@ -1,0 +1,11 @@
+root="./"
+thread=8
+logger=nil
+harbor=0
+start="tkx_cluster2"
+bootstrap="snlua bootstrap"
+loader="lualib/loader"
+luaservice="./service/?.lua;./tkx_test/?.lua"
+cpath="./cservice/?.so"
+cluster="./tkx_test/clustername.lua"
+snax="./tkx_test/?.lua"

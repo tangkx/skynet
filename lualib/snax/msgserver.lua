@@ -89,10 +89,12 @@ local connection = {}
 function server.userid(username)
 	-- base64(uid)@base64(server)#base64(subid)
 	local uid, servername, subid = username:match "([^@]*)@([^#]*)#(.*)"
+	print('.....msgserver...server.userid')
 	return b64decode(uid), b64decode(subid), b64decode(servername)
 end
 
 function server.username(uid, subid, servername)
+	print('.....msgserver...server.username')
 	return string.format("%s@%s#%s", b64encode(uid), b64encode(servername), b64encode(tostring(subid)))
 end
 
@@ -103,6 +105,7 @@ function server.logout(username)
 		gateserver.closeclient(u.fd)
 		connection[u.fd] = nil
 	end
+	print('.....msgserver...server.logout')
 end
 
 function server.login(username, secret)
@@ -114,6 +117,7 @@ function server.login(username, secret)
 		username = username,
 		response = {},	-- response cache
 	}
+	print('.....msgserver...server.login')
 end
 
 function server.ip(username)
@@ -121,11 +125,13 @@ function server.ip(username)
 	if u and u.fd then
 		return u.ip
 	end
+	print('.....msgserver...server.ip')
 end
 
 function server.start(conf)
 	local expired_number = conf.expired_number or 128
 
+	print('.....msgserver...server.start')
 	local handler = {}
 
 	local CMD = {
@@ -135,21 +141,26 @@ function server.start(conf)
 	}
 
 	function handler.command(cmd, source, ...)
+		print('.....msgserver...handler.command')
 		local f = assert(CMD[cmd])
 		return f(...)
 	end
 
 	function handler.open(source, gateconf)
+		print('.....msgserver...handler.open')
 		local servername = assert(gateconf.servername)
+		print(source..servername)	
 		return conf.register_handler(servername)
 	end
 
 	function handler.connect(fd, addr)
 		handshake[fd] = addr
+		print('.....msgserver...handler.connect')
 		gateserver.openclient(fd)
 	end
 
 	function handler.disconnect(fd)
+		print('.....msgserver...handler.disconnect')
 		handshake[fd] = nil
 		local c = connection[fd]
 		if c then
@@ -303,6 +314,7 @@ function server.start(conf)
 	end
 
 	function handler.message(fd, msg, sz)
+		print('.....msgserver...handler.message')
 		local addr = handshake[fd]
 		if addr then
 			auth(fd,addr,msg,sz)

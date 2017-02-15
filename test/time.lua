@@ -1,5 +1,7 @@
 local skynet = require "skynet"
 skynet.start(function()
+    print(skynet.time())
+    print(skynet.now()/100+skynet.starttime())
     print(skynet.starttime())
     print(skynet.now())
 

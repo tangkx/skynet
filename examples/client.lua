@@ -19,8 +19,10 @@ local function send_package(fd, pack)
 	socket.send(fd, package)
 end
 
+
 local function unpack_package(text)
 	local size = #text
+	
 	if size < 2 then
 		return nil, text
 	end
@@ -28,7 +30,7 @@ local function unpack_package(text)
 	if size < s+2 then
 		return nil, text
 	end
-
+	
 	return text:sub(3,2+s), text:sub(3+s)
 end
 
@@ -90,10 +92,12 @@ local function dispatch_package()
 	while true do
 		local v
 		v, last = recv_package(last)
+
 		if not v then
 			break
 		end
 
+		--print('*****',v,last)
 		print_package(host:dispatch(v))
 	end
 end

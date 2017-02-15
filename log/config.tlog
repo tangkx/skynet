@@ -1,0 +1,12 @@
+root="./"
+thread = 8
+logger = nil
+harbor = 0
+start = "logcluster"
+bootstrap = "snlua bootstrap"	-- The service for bootstrap
+luaservice = "./lualib/?.lua;./service/?.lua;./test/?.lua;./examples/?.lua;./log/?.lua"
+lualoader = "lualib/loader.lua"
+cpath = "./cservice/?.so;./luaclib/?.so"
+cluster = "./mysqlcluster/clustername.lua"
+log_dirname = "./log"
+log_basename = "self_log"

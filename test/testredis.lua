@@ -9,7 +9,7 @@ local conf = {
 
 local function watching()
 	local w = redis.watch(conf)
-	w:subscribe "foo"
+	w:psubscribe "f*"
 	w:psubscribe "hello.*"
 	while true do
 		print("Watch", w:message())
@@ -27,6 +27,10 @@ skynet.start(function()
 
 	print(db:get("A"))
 	print(db:get("B"))
+	for k,v in pairs(db:smembers("C")) do
+		print(k,v)
+	end
+	
 
 	db:del "D"
 	for i=1,10 do

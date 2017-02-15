@@ -1,0 +1,9 @@
+root="./"
+thread = 8
+logger = nil
+harbor=0
+start = "tkx_redis"
+bootstrap = "snlua bootstrap"
+luaservice = root.."service/?.lua;"..root.."tkx_test/?.lua;"..root.."examples/?.lua;"..root.."test/?.lua"
+lualoader = "lualib/loader.lua"
+cpath = root.."cservice/?.so"

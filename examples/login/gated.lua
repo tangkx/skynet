@@ -12,6 +12,7 @@ local internal_id = 0
 -- login server disallow multi login, so login_handler never be reentry
 -- call by login server
 function server.login_handler(uid, secret)
+	print('.....gated...server.login_handler')
 	if users[uid] then
 		error(string.format("%s is already login", uid))
 	end
@@ -38,6 +39,7 @@ function server.login_handler(uid, secret)
 	msgserver.login(username, secret)
 
 	-- you should return unique subid
+	
 	return id
 end
 
@@ -52,6 +54,7 @@ function server.logout_handler(uid, subid)
 		username_map[u.username] = nil
 		skynet.call(loginservice, "lua", "logout",uid, subid)
 	end
+	print('.....gated...server.logout_handler')
 end
 
 -- call by login server
@@ -63,6 +66,7 @@ function server.kick_handler(uid, subid)
 		-- NOTICE: logout may call skynet.exit, so you should use pcall.
 		pcall(skynet.call, u.agent, "lua", "logout")
 	end
+	print('.....gated...server.kick_handler')
 end
 
 -- call by self (when socket disconnect)
@@ -71,17 +75,23 @@ function server.disconnect_handler(username)
 	if u then
 		skynet.call(u.agent, "lua", "afk")
 	end
+	print('.....gated...server.disconnect_handler')
 end
 
 -- call by self (when recv a request from client)
 function server.request_handler(username, msg)
 	local u = username_map[username]
+	print('.....gated...server.request_handler')
 	return skynet.tostring(skynet.rawcall(u.agent, "client", msg))
 end
 
 -- call by self (when gate open)
 function server.register_handler(name)
+	print('#####gated addr ',skynet.self())
+	print('.....gated...server.register_handler')
+	print(name)
 	servername = name
+	print('######loginservice is:',loginservice)
 	skynet.call(loginservice, "lua", "register_gate", servername, skynet.self())
 end
 

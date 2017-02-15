@@ -1,0 +1,9 @@
+root="./"
+thread=8
+logger=nil
+harbor=0
+start="socket_service"
+bootstrap="snlua bootstrap"
+lualoader="lualib/loader.lua"
+luaservice=root.."tkx_test/?.lua;"..root.."lualib/?.lua;"..root.."service/?.lua"
+cpath=root.."cservice/?.so"

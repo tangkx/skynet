@@ -28,10 +28,12 @@ function gateserver.closeclient(fd)
 end
 
 function gateserver.start(handler)
+	print("****gateserver gateserver.start")
 	assert(handler.message)
 	assert(handler.connect)
 
 	function CMD.open( source, conf )
+		print("****gateserver CMD.open")
 		assert(not socket)
 		local address = conf.address or "0.0.0.0"
 		local port = assert(conf.port)
@@ -46,6 +48,7 @@ function gateserver.start(handler)
 	end
 
 	function CMD.close()
+		print("****gateserver CMD.open")
 		assert(socket)
 		socketdriver.close(socket)
 	end
@@ -53,6 +56,7 @@ function gateserver.start(handler)
 	local MSG = {}
 
 	local function dispatch_msg(fd, msg, sz)
+		print("****gateserver dispatch_msg")
 		if connection[fd] then
 			handler.message(fd, msg, sz)
 		else
@@ -63,6 +67,7 @@ function gateserver.start(handler)
 	MSG.data = dispatch_msg
 
 	local function dispatch_queue()
+		print("****gateserver dispatch_queue")
 		local fd, msg, sz = netpack.pop(queue)
 		if fd then
 			-- may dispatch even the handler.message blocked
@@ -79,6 +84,7 @@ function gateserver.start(handler)
 	MSG.more = dispatch_queue
 
 	function MSG.open(fd, msg)
+		print("****gateserver MSG.open")
 		if client_number >= maxclient then
 			socketdriver.close(fd)
 			return
@@ -92,6 +98,7 @@ function gateserver.start(handler)
 	end
 
 	local function close_fd(fd)
+		print("****gateserver close_fd")
 		local c = connection[fd]
 		if c ~= nil then
 			connection[fd] = nil
@@ -100,6 +107,7 @@ function gateserver.start(handler)
 	end
 
 	function MSG.close(fd)
+		print("****gateserver MSG.close")
 		if fd ~= socket then
 			if handler.disconnect then
 				handler.disconnect(fd)
@@ -111,6 +119,7 @@ function gateserver.start(handler)
 	end
 
 	function MSG.error(fd, msg)
+		print("****gateserver MSG.error")
 		if fd == socket then
 			socketdriver.close(fd)
 			skynet.error(msg)
@@ -123,18 +132,21 @@ function gateserver.start(handler)
 	end
 
 	function MSG.warning(fd, size)
+		print("****gateserver MSG.error")
 		if handler.warning then
 			handler.warning(fd, size)
 		end
 	end
 
 	skynet.register_protocol {
+
 		name = "socket",
 		id = skynet.PTYPE_SOCKET,	-- PTYPE_SOCKET = 6
 		unpack = function ( msg, sz )
 			return netpack.filter( queue, msg, sz)
 		end,
 		dispatch = function (_, _, q, type, ...)
+			print("****gateserver register_protocol")
 			queue = q
 			if type then
 				MSG[type](...)
@@ -144,6 +156,7 @@ function gateserver.start(handler)
 
 	skynet.start(function()
 		skynet.dispatch("lua", function (_, address, cmd, ...)
+			print("****gateserver skynet.dispatch")
 			local f = CMD[cmd]
 			if f then
 				skynet.ret(skynet.pack(f(address, ...)))

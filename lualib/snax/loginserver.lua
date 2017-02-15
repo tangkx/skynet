@@ -104,12 +104,15 @@ local function launch_slave(auth_handler)
 	end
 
 	skynet.dispatch("lua", function(_,_,...)
+		print('......loginserver...skynet.dispatch') --
 		local ok, msg, len = pcall(auth_fd, ...)
 		if ok then
 			skynet.ret(msg,len)
 		else
 			skynet.ret(skynet.pack(false, msg))
 		end
+
+		
 	end)
 end
 
@@ -157,7 +160,9 @@ local function launch_master(conf)
 	local slave = {}
 	local balance = 1
 
+	print('.....loginserver...launch_master')
 	skynet.dispatch("lua", function(_,source,command, ...)
+		print('#####loginserver..launch_master..dispatch',command)
 		skynet.ret(skynet.pack(conf.command_handler(command, ...)))
 	end)
 
@@ -186,13 +191,16 @@ end
 local function login(conf)
 	local name = "." .. (conf.name or "login")
 	skynet.start(function()
+		print('#####loginserver addr',skynet.self())
 		local loginmaster = skynet.localname(name)
 		if loginmaster then
+			print('.....loginserver...skynet...start...if')
 			local auth_handler = assert(conf.auth_handler)
 			launch_master = nil
 			conf = nil
 			launch_slave(auth_handler)
 		else
+			print('.....loginserver...skynet...start...else')
 			launch_slave = nil
 			conf.auth_handler = nil
 			assert(conf.login_handler)
@@ -200,6 +208,8 @@ local function login(conf)
 			skynet.register(name)
 			launch_master(conf)
 		end
+
+		--print('.....loginserver...skynet...start')
 	end)
 end
 

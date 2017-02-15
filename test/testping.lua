@@ -6,6 +6,7 @@ skynet.start(function()
 	print(ps.req.ping("foobar"))
 	print(ps.post.hello())
 	print(pcall(ps.req.error))
+	print('.....ok1')
 	print("Hotfix (i) :", snax.hotfix(ps, [[
 
 local i
@@ -23,11 +24,14 @@ function hotfix(...)
 end
 
 	]]))
+	print('.....ok2')
 	print(ps.post.hello())
-
+	print('......ps',ps)
+	print('......ps.handle',ps.handle)
 	local info = skynet.call(ps.handle, "debug", "INFO")
 
 	for name,v in pairs(info) do
+		print('.....info')
 		print(string.format("%s\tcount:%d time:%f", name, v.count, v.time))
 	end
 

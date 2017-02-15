@@ -7,6 +7,7 @@ local hello = "hello"
 
 function response.ping(hello)
 	skynet.sleep(100)
+	print(hello)
 	return hello
 end
 
@@ -14,6 +15,7 @@ end
 local lock
 
 function accept.sleep(queue, n)
+	print('.....pingserver...accept.sleep')
 	if queue then
 		lock(
 		function()
@@ -27,6 +29,7 @@ function accept.sleep(queue, n)
 end
 
 function accept.hello()
+	print('.....pingserver...accept.hello')
 	lock(function()
 	i = i + 1
 	print (i, hello)
@@ -34,11 +37,13 @@ function accept.hello()
 end
 
 function accept.exit(...)
+	print('.....pingserver...accept.exit')
 	snax.exit(...)
 end
 
 function response.error()
-	error "throw an error"
+	print('.....pingserver...response.error')
+	--error "throw an error"
 end
 
 function init( ... )

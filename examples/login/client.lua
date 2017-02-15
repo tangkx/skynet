@@ -8,6 +8,7 @@ if _VERSION ~= "Lua 5.3" then
 end
 
 local fd = assert(socket.connect("127.0.0.1", 8001))
+print('first connect fd is :',fd)
 
 local function writeline(fd, text)
 	socket.send(fd, text .. "\n")
@@ -60,6 +61,7 @@ local clientkey = crypt.randomkey()
 writeline(fd, crypt.base64encode(crypt.dhexchange(clientkey)))
 local secret = crypt.dhsecret(crypt.base64decode(readline()), clientkey)
 
+
 print("sceret is ", crypt.hexencode(secret))
 
 local hmac = crypt.hmac64(challenge, secret)
@@ -83,8 +85,9 @@ local b = crypt.base64encode(etoken)
 writeline(fd, crypt.base64encode(etoken))
 
 local result = readline()
-print(result)
+print('==result is:',result)
 local code = tonumber(string.sub(result, 1, 3))
+print('code is:',code)
 assert(code == 200)
 socket.close(fd)
 
@@ -132,6 +135,7 @@ local index = 1
 
 print("connect")
 fd = assert(socket.connect("127.0.0.1", 8888))
+print('connect fd is :',fd)
 last = ""
 
 local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(subid) , index)

@@ -3,6 +3,7 @@ local sprotoloader = require "sprotoloader"
 
 local max_client = 64
 
+
 skynet.start(function()
 	skynet.error("Server start")
 	skynet.uniqueservice("protoloader")
@@ -13,6 +14,7 @@ skynet.start(function()
 	skynet.newservice("simpledb")
 	local watchdog = skynet.newservice("watchdog")
 	skynet.call(watchdog, "lua", "start", {
+		address="127.0.0.1",
 		port = 8888,
 		maxclient = max_client,
 		nodelay = true,

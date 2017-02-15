@@ -12,6 +12,7 @@ local userid, subid
 local CMD = {}
 
 function CMD.login(source, uid, sid, secret)
+	print('.....msgagent...CMD.login')
 	-- you may use secret to make a encrypted data stream
 	skynet.error(string.format("%s is login", uid))
 	gate = source
@@ -29,23 +30,28 @@ end
 
 function CMD.logout(source)
 	-- NOTICE: The logout MAY be reentry
+	print('.....msgagent...CMD.logout')
 	skynet.error(string.format("%s is logout", userid))
 	logout()
 end
 
 function CMD.afk(source)
+	print('.....msgagent...CMD.afk')
 	-- the connection is broken, but the user may back
-	skynet.error(string.format("AFK"))
+	skynet.error(string.format("AFK"))	
 end
 
 skynet.start(function()
+	print('.....msgagent...skynet.start')
 	-- If you want to fork a work thread , you MUST do it in CMD.login
 	skynet.dispatch("lua", function(session, source, command, ...)
+		print('.....msgagent...skynet dispactch_lua'..command)
 		local f = assert(CMD[command])
 		skynet.ret(skynet.pack(f(source, ...)))
 	end)
 
 	skynet.dispatch("client", function(_,_, msg)
+		print('.....msgagent...skynet dispactch_client')
 		-- the simple echo service
 		skynet.sleep(10)	-- sleep a while
 		skynet.ret(msg)

@@ -1,0 +1,24 @@
+[INFO] 2017-02-13 15:27:59 [tkx] test
+[DEBUG] 2017-02-13 15:40:12 [logcluster] [./log/tprint.lua:30] my name is tkx
+[DEBUG] 2017-02-13 16:14:25 [logcluster] [./log/tprint.lua:30] my name is tkx
+[DEBUG] 2017-02-13 16:36:03 [logcluster] [./log/tprint.lua:30] my name is tkx
+[DEBUG] 2017-02-13 16:39:51 [logcluster] [./log/tprint.lua:30] my name is tkx
+[DEBUG] 2017-02-13 16:50:21 [logcluster] [./log/tprint.lua:30] my name is tkx
+[DEBUG] 2017-02-13 16:51:30 [logcluster] [./log/tprint.lua:30] my name is tkx
+[ERROR] 2017-02-13 16:51:34 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-13 16:51:34 [mysqlserver] [./log/tprint.lua:16] push db to pool count
+[ERROR] 2017-02-13 16:51:34 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-13 16:51:34 [redisserver] [./log/tprint.lua:16] push db to pool count
+[INFO] 2017-02-13 16:51:34 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 16:51:34 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-13 16:51:34 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 16:51:34 [redisserver] [./log/tprint.lua:16] get db success
+[DEBUG] 2017-02-13 16:53:57 [logcluster] [./log/tprint.lua:30] my name is tkx
+[ERROR] 2017-02-13 16:54:01 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-13 16:54:01 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-13 16:54:01 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-13 16:54:01 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-13 16:54:01 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 16:54:01 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-13 16:54:01 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-13 16:54:01 [redisserver] [./log/tprint.lua:16] get db success

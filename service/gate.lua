@@ -14,14 +14,17 @@ skynet.register_protocol {
 local handler = {}
 
 function handler.open(source, conf)
+	print('&&&&gate handler.open')
 	watchdog = conf.watchdog or source
 end
 
 function handler.message(fd, msg, sz)
+	print('&&&&gate handler.message')
 	-- recv a package, forward it
 	local c = connection[fd]
 	local agent = c.agent
 	if agent then
+		print('####',agent,c.client)
 		skynet.redirect(agent, c.client, "client", 1, msg, sz)
 	else
 		skynet.send(watchdog, "lua", "socket", "data", fd, netpack.tostring(msg, sz))
@@ -29,6 +32,7 @@ function handler.message(fd, msg, sz)
 end
 
 function handler.connect(fd, addr)
+	print('&&&&gate handler.connect')
 	local c = {
 		fd = fd,
 		ip = addr,
@@ -54,22 +58,27 @@ local function close_fd(fd)
 end
 
 function handler.disconnect(fd)
+	print('&&&&gate handler.disconnect')
 	close_fd(fd)
 	skynet.send(watchdog, "lua", "socket", "close", fd)
 end
 
 function handler.error(fd, msg)
+	print('&&&&gate handler.error')
 	close_fd(fd)
 	skynet.send(watchdog, "lua", "socket", "error", fd, msg)
 end
 
 function handler.warning(fd, size)
+	print('&&&&gate handler.warning')
 	skynet.send(watchdog, "lua", "socket", "warning", fd, size)
 end
 
 local CMD = {}
 
 function CMD.forward(source, fd, client, address)
+	print('&&&&gate CMD.forward',source,fd,client,address)
+
 	local c = assert(connection[fd])
 	unforward(c)
 	c.client = client or 0
@@ -79,16 +88,19 @@ function CMD.forward(source, fd, client, address)
 end
 
 function CMD.accept(source, fd)
+	print('&&&&gate CMD.accept')
 	local c = assert(connection[fd])
 	unforward(c)
 	gateserver.openclient(fd)
 end
 
 function CMD.kick(source, fd)
+	print('&&&&gate CMD.kick')
 	gateserver.closeclient(fd)
 end
 
 function handler.command(cmd, source, ...)
+	print('&&&&gate handler.command')
 	local f = assert(CMD[cmd])
 	return f(source, ...)
 end

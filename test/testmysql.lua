@@ -78,7 +78,7 @@ skynet.start(function()
 		port=3306,
 		database="skynet",
 		user="root",
-		password="1",
+		password="123",
 		max_packet_size = 1024 * 1024,
 		on_connect = on_connect
 	})
@@ -90,13 +90,16 @@ skynet.start(function()
 	local res = db:query("drop table if exists cats")
 	res = db:query("create table cats "
 		               .."(id serial primary key, ".. "name varchar(5))")
+    -- print(".....res : ",res)
 	print( dump( res ) )
 
 	res = db:query("insert into cats (name) "
                              .. "values (\'Bob\'),(\'\'),(null)")
+   --  print(".....res : ",res)
 	print ( dump( res ) )
 
 	res = db:query("select * from cats order by id asc")
+    --print(".....res : ",res)
 	print ( dump( res ) )
 
     -- test in another coroutine
@@ -104,16 +107,18 @@ skynet.start(function()
     skynet.fork( test3, db)
 	-- multiresultset test
 	res = db:query("select * from cats order by id asc ; select * from cats")
+    --print(".....res : ",res)
 	print ("multiresultset test result=", dump( res ) )
 
 	print ("escape string test result=", mysql.quote_sql_str([[\mysql escape %string test'test"]]) )
 
 	-- bad sql statement
 	local res =  db:query("select * from notexisttable" )
+   -- print(".....res : ",res)
 	print( "bad query test result=" ,dump(res) )
 
     local i=1
-    while true do
+    --[[while true do
         local    res = db:query("select * from cats order by id asc")
         print ( "test1 loop times=" ,i,"\n","query result=",dump( res ) )
 
@@ -121,9 +126,9 @@ skynet.start(function()
         print ( "test1 loop times=" ,i,"\n","query result=",dump( res ) )
 
 
-        skynet.sleep(1000)
+        skynet.sleep(100000)
         i=i+1
-    end
+    end--]]
 
 	--db:disconnect()
 	--skynet.exit()
