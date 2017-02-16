@@ -1,7 +1,7 @@
 -- @Author: tkx
 -- @Date:   2017-02-14 09:08:23
 -- @Last Modified by:   tkx
--- @Last Modified time: 2017-02-14 15:14:11
+-- @Last Modified time: 2017-02-15 15:29:50
 
 local skynet = require "skynet"
 local netpack = require "netpack"
@@ -99,7 +99,7 @@ function CMD.start(conf)
 			local str = send_request("heartbeat",{heartbeat = i})
 			send_package(str)
 			i = i+1
-			skynet.sleep(500)
+			skynet.sleep(5000)
 		end
 	end)
 

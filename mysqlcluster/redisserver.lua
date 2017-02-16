@@ -1,7 +1,7 @@
 -- @Author: tkx
 -- @Date:   2017-02-13 11:09:50
 -- @Last Modified by:   tkx
--- @Last Modified time: 2017-02-14 17:14:41
+-- @Last Modified time: 2017-02-15 14:15:03
 package.path = "./service/?.lua;./examples/?.lua;./mysqlcluster/?.lua;./lualib/?.lua"
 package.cpath = "./cservice/?.so;./luaclib/?.so"
 
@@ -154,4 +154,5 @@ skynet.start(function ()
 		local f = assert(CMD[command], command..'not found')
 		skynet.ret(skynet.pack(f(...)))
 	end)
+
 end)

@@ -1,7 +1,7 @@
 -- @Author: tkx
 -- @Date:   2017-02-14 09:08:23
 -- @Last Modified by:   tkx
--- @Last Modified time: 2017-02-14 10:20:32
+-- @Last Modified time: 2017-02-15 11:29:20
 package.path = "./lualib/?.lua;./service/?.lua;./test/?.lua;./examples/?.lua;./tgateserver/?.lua;./log/?.lua"
 
 local skynet = require "skynet"
@@ -33,7 +33,7 @@ function handler.message(fd, msg, sz)
 		print('####',agent,c.client)
 		skynet.redirect(agent, c.client, "client", 1, msg, sz)
 	else
-		
+		print("agent is nil")
 	end
 end
 

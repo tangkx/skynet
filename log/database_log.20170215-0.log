@@ -1,0 +1,103 @@
+[ERROR] 2017-02-15 14:00:12 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:00:12 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:00:12 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:00:12 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:00:12 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 14:22:43 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:22:43 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:22:43 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:22:43 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:22:43 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 14:25:45 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:25:45 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:25:45 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:25:45 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:25:45 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 14:29:52 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:29:52 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:29:52 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:52 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:52 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:53 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:29:53 [mysqlserver] [./log/tprint.lua:16] what is :
+[ERROR] 2017-02-15 14:32:56 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:32:56 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:32:56 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:32:56 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:32:56 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:33:00 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:33:00 [mysqlserver] [./log/tprint.lua:16] what is :
+[ERROR] 2017-02-15 14:41:20 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 14:41:20 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 14:41:20 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:20 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:20 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:22 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 14:41:22 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 14:41:22 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 16:12:35 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 16:12:35 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 16:12:35 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:35 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:35 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:37 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:12:37 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 16:12:37 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 16:14:06 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 16:14:06 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 16:14:06 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:06 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:06 [redisserver] [./log/tprint.lua:16] get db success
+[ERROR] 2017-02-15 16:14:32 [mysqlserver] [./log/tprint.lua:23] push db to pool fail
+[INFO] 2017-02-15 16:14:32 [mysqlserver] [./log/tprint.lua:16] push db to pool count15
+[ERROR] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:23] push redisdb to pool fail
+[INFO] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:16] push db to pool count15
+[INFO] 2017-02-15 16:14:32 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:32 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:32 [redisserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:34 [mysqlserver] [./log/tprint.lua:16] get db success
+[INFO] 2017-02-15 16:14:34 [mysqlserver] [./log/tprint.lua:16] what is :
+[INFO] 2017-02-15 16:14:34 [redisserver] [./log/tprint.lua:16] get db success
