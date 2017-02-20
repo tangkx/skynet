@@ -101,7 +101,7 @@ local function dispatch_package()
 		print_package(host:dispatch(v))
 	end
 end
-
+send_package(fd, "hello lua")
 send_request("handshake")
 send_request("set", { what = "hello", value = "world" })
 while true do

@@ -1,7 +1,7 @@
 -- @Author: tkx
 -- @Date:   2017-02-14 09:08:23
 -- @Last Modified by:   tkx
--- @Last Modified time: 2017-02-14 09:51:13
+-- @Last Modified time: 2017-02-16 16:27:15
 local skynet = require "skynet"
 local netpack = require "netpack"
 local socketdriver = require "socketdriver"
@@ -62,7 +62,8 @@ function gateserver.start(handler)
 	local function dispatch_msg(fd, msg, sz)
 		--print("****gateserver dispatch_msg")
 		if connection[fd] then
-			handler.message(fd, msg, sz)
+			msg = netpack.tostring(msg, sz)
+			handler.message(fd, msg)
 		else
 			skynet.error(string.format("Drop message from fd (%d) : %s", fd, netpack.tostring(msg,sz)))
 		end

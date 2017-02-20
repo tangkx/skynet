@@ -1,7 +1,7 @@
 -- @Author: tkx
 -- @Date:   2017-02-14 09:08:23
 -- @Last Modified by:   tkx
--- @Last Modified time: 2017-02-15 11:29:20
+-- @Last Modified time: 2017-02-16 16:33:37
 package.path = "./lualib/?.lua;./service/?.lua;./test/?.lua;./examples/?.lua;./tgateserver/?.lua;./log/?.lua"
 
 local skynet = require "skynet"
@@ -24,17 +24,19 @@ function handler.open(source, conf)
 	--watchdog = conf.watchdog or source
 end
 
-function handler.message(fd, msg, sz)
+function handler.message(fd, msg)
 	--print('&&&&gate handler.message')
 	-- recv a package, forward it
 	local c = connection[fd]
-	local agent = c.agent
-	if agent then
-		print('####',agent,c.client)
-		skynet.redirect(agent, c.client, "client", 1, msg, sz)
-	else
-		print("agent is nil")
-	end
+	print(type(msg))
+	print(msg)
+	-- local agent = c.agent
+	-- if agent then
+	-- 	print('####',agent,c.client)
+	-- 	skynet.redirect(agent, c.client, "client", 1, msg, sz)
+	-- else
+	-- 	print("agent is nil")
+	-- end
 end
 
 function handler.connect(fd, addr)
